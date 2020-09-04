@@ -38,7 +38,7 @@ while True:
                 count = 1
                 for url in playlist.video_urls:
                     try:
-                        yt = YouTube(link)
+                        yt = YouTube(url)
                         yt.streams.first().download(download_folder)
                         show += f'\n[+] Success {count}: {yt.title}'
                     except:
