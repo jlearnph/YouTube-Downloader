@@ -9,3 +9,4 @@ It allows you to
 4. shows you the progress of your download
 5. shows the summary of your downloads
 
+![preview](https://github.com/jlearnph/YouTube-Downloader/blob/master/preview.png)
