@@ -1,5 +1,3 @@
-#JLearn PH
-
 from pytube import Playlist
 from pytube import YouTube
 import re
@@ -37,6 +35,10 @@ while True:
                 show += f'\nStarting download for {len(playlist.video_urls)} videos\n'
                 count = 1
                 for url in playlist.video_urls:
+                    event, values = window.read(timeout=0)
+                    if (event == sg.WIN_CLOSED or event == 'Exit'):
+                        show += '\n\nDownload Stopped Manually'
+                        break
                     try:
                         yt = YouTube(url)
                         yt.streams.first().download(download_folder)
@@ -57,6 +59,5 @@ while True:
 
     if (event == sg.WIN_CLOSED or event == 'Exit'):
         break      
-
 
 window.close()
